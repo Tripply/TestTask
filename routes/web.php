@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ObjectController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,5 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/object','App\Http\Controllers\ObjectController@index');
-    
+Route::resource('object', ObjectController::class);
