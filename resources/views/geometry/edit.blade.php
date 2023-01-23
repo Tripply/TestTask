@@ -20,9 +20,9 @@
         {!! csrf_field() !!}
         @method("PATCH")
         <input type="hidden" name="id" id="id" value="{{$geometr->id}}" id="id" />
-        <label>Name</label></br>
+        <label>Геометрия обьекта</label></br>
         <input type="text" name="geometry__of__object__of__evaluation" id="geometry__of__object__of__evaluation" value="{{$geometr->geometry}}" class="form-control"></br>
-        <input type="submit" value="Save" class="btn btn-success" style="--bs-btn-color: #040000;"></br>
+        <input type="submit" value="Сохранить" class="btn btn-success" style="--bs-btn-color: #040000;"></br>
     </form>
     @endforeach
 </body>

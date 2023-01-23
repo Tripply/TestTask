@@ -37,9 +37,13 @@ class ObjectController extends Controller
      */
     public function store(Request $request)
     {
+        $requestdata[] = $request->all();
+        $requestdata['Addres']=json_encode($request->Address);
+        $request->merge(['Address' => $requestdata['Addres']]);
+
             ObjectEv::create($request->all());
             $objects=ObjectEv::all();
-            return view('objects.index',compact('objects'));
+            return redirect('object')->with('flash_message', 'object Updated!');
     }
 
     /**
@@ -76,7 +80,12 @@ class ObjectController extends Controller
     public function update(Request $request, $id)
     {
         $object = ObjectEv::find($id);
+
+        $requestdata[] = $request->all();
+        $requestdata['Addres']=json_encode($request->Address);
+        $request->merge(['Address' => $requestdata['Addres']]);
         $input = $request->all();
+
         $object->update($input);
         return redirect('object')->with('flash_message', 'object Updated!');
     }

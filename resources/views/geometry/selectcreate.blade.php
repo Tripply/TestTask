@@ -30,7 +30,7 @@
     <tbody>
       <tr>
         <td>{{ $object->Cadastral_Number }}</td>
-        <td>{{ json_encode($object->Address, JSON_UNESCAPED_UNICODE)}}</td>
+        <td>{{ json_decode($object->Address, JSON_UNESCAPED_UNICODE)}}</td>
         <td>{{ $object->Description }}</td>
         <td>
 

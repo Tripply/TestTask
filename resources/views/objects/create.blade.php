@@ -23,7 +23,7 @@
         <input type="text" name="Address" id="Address" class="form-control"></br>
         <label>Описание</label></br>
         <input type="text" name="Description" id="Description" class="form-control"></br>
-        <input type="submit" value="Save" class="btn btn-success" style="--bs-btn-color: #040000;"></br>
+        <input type="submit" value="Сохранить" class="btn btn-success" style="--bs-btn-color: #040000;"></br>
     </form>
 
 </body>

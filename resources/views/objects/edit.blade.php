@@ -19,13 +19,13 @@
         {!! csrf_field() !!}
         @method("PATCH")
         <input type="hidden" name="id" id="id" value="{{$object->id}}" id="id" />
-        <label>Name</label></br>
+        <label>Кадастровый номер</label></br>
         <input type="text" name="Cadastral_Number" id="Cadastral_Number" value="{{$object->Cadastral_Number}}" class="form-control"></br>
-        <label>Address</label></br>
+        <label>Адрес</label></br>
         <input type="text" name="Address" id="Address" value="{{$object->Address}}" class="form-control"></br>
-        <label>Mobile</label></br>
+        <label>Описание</label></br>
         <input type="text" name="Description" id="Description" value="{{$object->Description}}" class="form-control"></br>
-        <input type="submit" value="Update" class="btn btn-success" style="--bs-btn-color: #040000;"></br>
+        <input type="submit" value="Обновить" class="btn btn-success" style="--bs-btn-color: #040000;"></br>
     </form>
 
 </body>

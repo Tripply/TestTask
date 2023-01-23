@@ -31,16 +31,16 @@
     <tbody>
       <tr>
         <td>{{ $object->Cadastral_Number }}</td>
-        <td>{{ json_encode($object->Address, JSON_UNESCAPED_UNICODE)}}</td>
+        <td>{{ json_decode($object->Address, JSON_UNESCAPED_UNICODE)}}</td>
         <td>{{ $object->Description }}</td>
         <td>
-          <a href="{{ url('/object/' . $object->id) }}" title="View Object"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/object/' . $object->id . '/edit') }}" title="Edit Object"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+          <a href="{{ url('/object/' . $object->id) }}" title="View Object"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Обзор</button></a>
+                                            <a href="{{ url('/object/' . $object->id . '/edit') }}" title="Edit Object"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Редактировать</button></a>
 
                                             <form method="POST" action="{{ url('/object' . '/' . $object->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Object" style="--bs-btn-color: #040000;" ><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Object" style="--bs-btn-color: #040000;" ><i class="fa fa-trash-o" aria-hidden="true"></i> Удалить</button>
                                             </form>
         </td>
       </tr>
