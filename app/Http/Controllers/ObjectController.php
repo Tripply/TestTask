@@ -38,7 +38,8 @@ class ObjectController extends Controller
     public function store(Request $request)
     {
             ObjectEv::create($request->all());
-            return redirect('object')->with('flash_message', 'Object Addedd!');
+            $objects=ObjectEv::all();
+            return view('objects.index',compact('objects'));
     }
 
     /**
@@ -49,7 +50,8 @@ class ObjectController extends Controller
      */
     public function show($id)
     {
-        //
+        $object = ObjectEv::find($id);
+        return view('objects.show')->with('object', $object);
     }
 
     /**
@@ -60,7 +62,8 @@ class ObjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $object = ObjectEv::find($id);
+        return view('objects.edit')->with('object', $object);
     }
 
     /**
@@ -72,7 +75,10 @@ class ObjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $object = ObjectEv::find($id);
+        $input = $request->all();
+        $object->update($input);
+        return redirect('object')->with('flash_message', 'object Updated!');
     }
 
     /**
@@ -83,6 +89,7 @@ class ObjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ObjectEv::destroy($id);
+        return redirect('object');
     }
 }

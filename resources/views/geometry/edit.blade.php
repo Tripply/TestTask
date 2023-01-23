@@ -9,17 +9,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
-    <form action="{{ url('object') }}" method="post">
+    @foreach ($geometry as $geometr)
+    <form action="{{ url('geometry/' .$geometr->id) }}?id={{ $_GET['id'] }}" method="post">
         {!! csrf_field() !!}
-        <label>Кадастровый номер</label></br>
-        <input type="text" name="Cadastral_Number" id="Cadastral_Number" class="form-control"></br>
-        <label>Адрес</label></br>
-        <input type="text" name="Address" id="Address" class="form-control"></br>
-        <label>Описание</label></br>
-        <input type="text" name="Description" id="Description" class="form-control"></br>
+        @method("PATCH")
+        <input type="hidden" name="id" id="id" value="{{$geometr->id}}" id="id" />
+        <label>Name</label></br>
+        <input type="text" name="geometry__of__object__of__evaluation" id="geometry__of__object__of__evaluation" value="{{$geometr->geometry}}" class="form-control"></br>
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
-
+    @endforeach
 </body>
 </html>

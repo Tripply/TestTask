@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ObjectController;
+use App\Http\Controllers\GeometryController;
+use App\Http\Controllers\SelectObjectController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,3 +21,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('object', ObjectController::class);
+Route::resource('geometry', GeometryController::class);
+Route::get('selectobject', [SelectObjectController  ::class, 'index']);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Objects</title>
+  <title>Геометрия</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -10,14 +10,11 @@
 </head>
 <body>
 
-    <form action="{{ url('object') }}" method="post">
+    <form action="{{ url('geometry') }}" method="post">
         {!! csrf_field() !!}
-        <label>Кадастровый номер</label></br>
-        <input type="text" name="Cadastral_Number" id="Cadastral_Number" class="form-control"></br>
-        <label>Адрес</label></br>
-        <input type="text" name="Address" id="Address" class="form-control"></br>
-        <label>Описание</label></br>
-        <input type="text" name="Description" id="Description" class="form-control"></br>
+        <label>Геометрия</label></br>
+        <input type="text" name="geometry__of__object__of__evaluation" id="geometry__of__object__of__evaluation" class="form-control"></br>
+        <input type="hidden" name="object_id" id="object_id" value="{{ $ObjId }}" class="form-control"></br>
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
 
