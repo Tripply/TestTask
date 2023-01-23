@@ -3,6 +3,7 @@
 use App\Http\Controllers\ObjectController;
 use App\Http\Controllers\GeometryController;
 use App\Http\Controllers\SelectObjectController;
+use App\Http\Controllers\JsonObjectsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,3 +24,5 @@ Route::get('/', function () {
 Route::resource('object', ObjectController::class);
 Route::resource('geometry', GeometryController::class);
 Route::get('selectobject', [SelectObjectController  ::class, 'index']);
+Route::get('jsobject', [JsonObjectsController  ::class, 'index']);
+
