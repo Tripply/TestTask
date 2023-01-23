@@ -9,9 +9,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
+    <x-app-layout>
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Геометрия') }}
+            </h2>
+        </x-slot>
 <div class="container mt-3">
-  <h2>Выберите обьект</h2>
+
   <table class="table table-hover">
     <thead>
       <tr>
@@ -41,3 +46,4 @@
 
 </body>
 </html>
+</x-app-layout>

@@ -9,8 +9,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
-    <form action="{{ url('object') }}" method="post">
+    <x-app-layout>
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Геометрия') }}
+            </h2>
+        </x-slot>
+    <form action="{{ url('object') }}" method="post" style="margin-left: 5%;margin-right: 5%;">
         {!! csrf_field() !!}
         <label>Кадастровый номер</label></br>
         <input type="text" name="Cadastral_Number" id="Cadastral_Number" class="form-control"></br>
@@ -18,8 +23,9 @@
         <input type="text" name="Address" id="Address" class="form-control"></br>
         <label>Описание</label></br>
         <input type="text" name="Description" id="Description" class="form-control"></br>
-        <input type="submit" value="Save" class="btn btn-success"></br>
+        <input type="submit" value="Save" class="btn btn-success" style="--bs-btn-color: #040000;"></br>
     </form>
 
 </body>
 </html>
+</x-app-layout>

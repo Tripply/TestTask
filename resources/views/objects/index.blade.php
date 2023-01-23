@@ -10,9 +10,14 @@
 </head>
 <body>
 
+    <x-app-layout>
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Обьекты') }}
+            </h2>
+        </x-slot>
 <div class="container mt-3">
-  <h2>Objects</h2>
-  <a href='{{ url('/object/create') }}' type="button" class="btn btn-primary btn-sm"><span class="bi bi-plus"></span>&nbsp;Добавить обьект</a>
+  <a href='{{ url('/object/create') }}' type="button" class="btn btn-primary btn-sm" style="--bs-btn-color: #040000;"><span class="bi bi-plus"></span>&nbsp;Добавить обьект</a>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -35,7 +40,7 @@
                                             <form method="POST" action="{{ url('/object' . '/' . $object->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Object" ><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Object" style="--bs-btn-color: #040000;" ><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
         </td>
       </tr>
@@ -47,3 +52,4 @@
 
 </body>
 </html>
+</x-app-layout>

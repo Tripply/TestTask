@@ -9,7 +9,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
+    <x-app-layout>
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Геометрия') }}
+            </h2>
+        </x-slot>
     <div class="card" style="margin:20px;">
         <div class="card-header">Страница геометри обьекта</div>
         <div class="card-body">
@@ -26,3 +31,4 @@
 </body>
 </html>
 
+</x-app-layout>

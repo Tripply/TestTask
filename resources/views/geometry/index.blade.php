@@ -9,10 +9,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
+    <x-app-layout>
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Геометрия') }}
+            </h2>
+        </x-slot>
 <div class="container mt-3">
   <h2>Геометрия обьектов</h2>
-  <a href='{{ url('/selectobject') }}?id=add' type="button" class="btn btn-primary btn-sm"><span class="bi bi-plus"></span>&nbsp;Добавить обьект</a>
+  <a href='{{ url('/selectobject') }}?id=add' type="button" class="btn btn-primary btn-sm" style="--bs-btn-color: #040000;"><span class="bi bi-plus"></span>&nbsp;Добавить обьект</a>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -34,7 +39,7 @@
                                             <form method="POST" action="{{ url('/geometry' . '/' . $geometr->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Object" ><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Object" style="--bs-btn-color: #040000;" ><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
         </td>
       </tr>
@@ -46,3 +51,4 @@
 
 </body>
 </html>
+</x-app-layout>
