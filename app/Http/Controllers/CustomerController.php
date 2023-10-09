@@ -40,6 +40,7 @@ class CustomerController extends Controller
     {
         $customer = Customer::leftJoin('purchases', 'customers.id', '=', 'purchases.customer_id')
             ->select('customers.id', 'customers.name', 'customers.phone_number', DB::raw('COUNT(purchases.customer_id) as purchase_count'))
+            ->where('customers.id', $customerId)
             ->groupBy('customers.id', 'customers.name')
             ->get()
             ->first();
@@ -115,7 +116,7 @@ class CustomerController extends Controller
     public function sendSms(string $phoneNumber, int $id): void
     {
         $smsService = new SmsService();
-        $smsService->sendSms($phoneNumber, "http://127.0.0.1:8000/customer/qr/{$id}");
+        $smsService->sendSms($phoneNumber, config('app.url', 'http://127.0.0.1:8000')."/customer/qr/{$id}");
     }
 
     /**

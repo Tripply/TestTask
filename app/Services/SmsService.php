@@ -7,7 +7,6 @@ use GuzzleHttp\Client;
 class SmsService
 {
     protected $apiUrl;
-    protected $apiKey;
 
     public function __construct()
     {
@@ -19,11 +18,11 @@ class SmsService
         $client = new Client();
 
         $queryParams = [
-            'login' => 'rdbx', // Ваш API-ключ
-            'psw' => 'ea1c2o1m', // Ваш пароль, если необходим
-            'phones' => $phoneNumber, // Номер телефона получателя
-            'mes' => $message, // Текст сообщения
-            'charset' => 'utf-8', // Кодировка текста сообщения
+            'login' => 'rdbx',
+            'psw' => 'ea1c2o1m',
+            'phones' => $phoneNumber,
+            'mes' => $message,
+            'charset' => 'utf-8',
         ];
 
         try {
